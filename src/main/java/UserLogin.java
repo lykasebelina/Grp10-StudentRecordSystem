@@ -14,10 +14,10 @@ import java.awt.*;
 public class UserLogin extends JFrame implements ActionListener{
         JFrame frame;
         JPanel header;
-        JLabel lemail, lpassword,linfo, lheader;
+        JLabel lemail, lpassword, linfo, lheader;
         JTextField email;
         JPasswordField password;
-        JButton button1, button2;
+        JButton button1;
         JCheckBox box;
         
         
@@ -66,14 +66,10 @@ UserLogin() {
         lemail.setBounds(330, 240, 250, 40);
         lemail.setFont(new Font("Arial Black", Font.BOLD, 12));
         
-        button2 = new JButton("Reset");
-        button2.setFont(new Font("Arial Black", Font.BOLD, 10));
-        button2.setBounds(600,350,70,30);
-        button2.addActionListener(this);
         
-        box = new JCheckBox("Show Password");
-        box.setFont(new Font("Arial Black", Font.BOLD, 10));
-        box.setBounds(420,350,120,30);
+        box = new JCheckBox("Show Your Password");
+        box.setFont(new Font("Arial Black", Font.BOLD, 12));
+        box.setBounds(420,350,190,30);
         box.addActionListener(this);
         
 
@@ -85,7 +81,6 @@ UserLogin() {
         frame.add(linfo);
         frame.add(password);
         frame.add(email);
-        frame.add(button2);
         frame.add(box);
         frame.add(header, Integer.valueOf(2));
         header.add(lheader);
@@ -95,8 +90,6 @@ UserLogin() {
         box.setBackground(new Color(255, 239, 213));
         button1.setForeground(new Color(245, 245, 220));
         button1.setBackground(new Color(128, 0, 0));
-        button2.setForeground(new Color(245, 245, 220));
-        button2.setBackground(new Color(128, 0, 0));
         header.setBackground(new Color(128, 0, 0)); 
         lheader.setForeground(new Color(245, 245, 220));
         lheader.setForeground(Color.WHITE);
@@ -110,13 +103,7 @@ UserLogin() {
 
 @Override
     public void actionPerformed(ActionEvent e) {
-            
-        if(e.getSource()== button2){
-            email.setText("");
-            password.setText("");
-            
-        }
-        
+                 
         if(e.getSource() == box){
             if(box.isSelected()) {
             password.setEchoChar((char)0);
@@ -126,9 +113,6 @@ UserLogin() {
                     }
         }
         
-        if(e.getSource() == button2){
- 
-        }
     }
     
 }
