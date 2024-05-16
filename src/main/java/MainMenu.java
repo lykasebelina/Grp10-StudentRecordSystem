@@ -1,21 +1,29 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author lykamaesebelina
+ */
 
 public class MainMenu extends JFrame implements ActionListener {
         JFrame frame;
         Image background;
         Image imageSize;
         ImageIcon bgImage;
-        JLabel bgLabel;
         JPanel headerPanel;
         JLabel headerLabel;
-        JButton button1, button2, button3, button4;
+        JButton button1, button2, button3, button4, logoutButton;
         
         
     public MainMenu() {
@@ -65,7 +73,7 @@ public class MainMenu extends JFrame implements ActionListener {
         button1.setBackground(new Color(128, 0, 0));      
         button1.setOpaque(true);
         button1.setBorder(null);
-        button1.setBounds(625, 135, 780, 150);
+        button1.setBounds(60, 135, 780, 150);
         button1.addActionListener(this);
  
   
@@ -76,7 +84,7 @@ public class MainMenu extends JFrame implements ActionListener {
         button2.setBackground(new Color(128, 0, 0));
         button2.setOpaque(true);
         button2.setBorder(null);
-        button2.setBounds(625, 295, 780, 150); 
+        button2.setBounds(60, 295, 780, 150); 
         button2.addActionListener(this);
 
         
@@ -87,19 +95,19 @@ public class MainMenu extends JFrame implements ActionListener {
         button3.setBackground(new Color(128, 0, 0));
         button3.setOpaque(true);
         button3.setBorder(null);
-        button3.setBounds(625, 455, 780, 150);
+        button3.setBounds(60, 455, 780, 150);
         button3.addActionListener(this);
 
         
-        
-        button4 = new JButton("Courses");
-        button4.setFont(new Font("Arial Black", Font.BOLD, 28));
-        button4.setForeground(new Color(245, 245, 220));
-        button4.setBackground(new Color(128, 0, 0));
-        button4.setOpaque(true);
-        button4.setBorder(null);
-        button4.setBounds(625, 615, 780, 150);
-        button4.addActionListener(this);
+        logoutButton = new JButton("Logout");
+        logoutButton.setFont(new Font("Arial Black", Font.BOLD, 15));
+        logoutButton.setForeground(new Color(245, 245, 220));
+        logoutButton.setBackground(new Color(128, 0, 0));
+        logoutButton.setOpaque(true);
+        logoutButton.setBorder(null);
+        logoutButton.setBounds(1080, 680, 300, 70);
+        logoutButton.addActionListener(this);
+
 
 
         
@@ -108,13 +116,16 @@ public class MainMenu extends JFrame implements ActionListener {
         frame.add(button1);
         frame.add(button2);
         frame.add(button3);
-        frame.add(button4);
+        frame.add(logoutButton);
+
  
         
         frame.pack();
         frame.setVisible(true);
     }
 
+    
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
