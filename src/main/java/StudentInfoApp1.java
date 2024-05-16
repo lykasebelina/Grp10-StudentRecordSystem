@@ -11,7 +11,7 @@ public class StudentInfoApp1 extends JFrame {
     public StudentInfoApp1() {
         students = new ArrayList<>();
 
-        // Create components
+         
         JLabel nameLabel = new JLabel("Name:");
         JLabel ageLabel = new JLabel("Age:");
         JLabel idLabel = new JLabel("ID:");
@@ -25,7 +25,7 @@ public class StudentInfoApp1 extends JFrame {
         displayArea = new JTextArea(50, 50);
         displayArea.setEditable(false);
 
-        // Set up the panel
+       
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(5,2));
         panel.add(nameLabel);
@@ -36,13 +36,12 @@ public class StudentInfoApp1 extends JFrame {
         panel.add(deleteButton);
         panel.add(searchButton);
         panel.add(backButton);
-
-        // Add components to the frame
+ 
         setLayout(new BorderLayout());
         add(panel, BorderLayout.NORTH);
         add(new JScrollPane(displayArea), BorderLayout.CENTER);
 
-        // Add button actions
+   
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 addStudent();
@@ -67,7 +66,7 @@ public class StudentInfoApp1 extends JFrame {
             }
         });
 
-        // Final frame setup
+       
         setTitle("Student Information");
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
