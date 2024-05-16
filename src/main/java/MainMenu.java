@@ -49,7 +49,7 @@ public class MainMenu extends JFrame implements ActionListener {
 
         
         
-        headerLabel = new JLabel("PUPBC STUDENT RECORD SYSTEM");
+        headerLabel = new JLabel("BSIT STUDENT RECORD SYSTEM");
         headerLabel.setPreferredSize(new Dimension(720, 100)); 
         headerLabel.setForeground(Color.WHITE);
         headerLabel.setFont(new Font("Arial", Font.BOLD, 38));
