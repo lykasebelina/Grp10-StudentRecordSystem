@@ -7,6 +7,7 @@
  *
  * @author MJV Merida
  */
+
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
@@ -27,7 +28,7 @@ UserLogin() {
         frame = new JFrame();
         
         // setting the frame size
-        frame.setSize(1000,1000);
+        frame.setSize(1500,1000);
         
         //Frame title
         frame.setTitle("PUPBC Student Record System");
@@ -38,38 +39,38 @@ UserLogin() {
         
         //Setting the sizes and fonts   
         header = new JPanel();   
-        header.setBounds(0, 0, 1100, 100);
+        header.setBounds(0, 0, 1700, 100);
         
-        lheader = new JLabel("PUPBC STUDENT RECORD SYSTEM");
-        lheader.setPreferredSize(new Dimension(820, 90));
+        lheader = new JLabel("BSIT STUDENT RECORD SYSTEM");
+        lheader.setPreferredSize(new Dimension(840, 90));
         lheader.setFont(new Font("Bookman Old Style", Font.BOLD, 38));
         
         button1 = new JButton("Login");
         button1.setFont(new Font("Arial Black", Font.BOLD, 14));
-        button1.setBounds(350,520,300,60);
+        button1.setBounds(520,520,450,60);
         
         lpassword = new JLabel("Password:");
-        lpassword.setBounds(330, 280, 170, 80);
-        lpassword.setFont(new Font("Arial Black", Font.BOLD, 12));
+        lpassword.setBounds(550, 280, 170, 80);
+        lpassword.setFont(new Font("Arial Black", Font.BOLD, 13));
         
         linfo = new JLabel("LOGIN");
-        linfo.setBounds(420, 120, 390, 90);
+        linfo.setBounds(650, 120, 390, 90);
         linfo.setFont(new Font("Arial Black", Font.BOLD, 50));
         
         password = new JPasswordField();
-        password.setBounds(420,300,250,40);
+        password.setBounds(650,300,300,40);
         
         email = new JTextField();
-        email.setBounds(420,240,250,40);
+        email.setBounds(650,240,300,40);
         
         lemail = new JLabel("Email:");
-        lemail.setBounds(330, 240, 250, 40);
-        lemail.setFont(new Font("Arial Black", Font.BOLD, 12));
+        lemail.setBounds(550, 240, 250, 40);
+        lemail.setFont(new Font("Arial Black", Font.BOLD, 13));
         
         
         box = new JCheckBox("Show Your Password");
         box.setFont(new Font("Arial Black", Font.BOLD, 12));
-        box.setBounds(420,350,190,30);
+        box.setBounds(650,350,190,30);
         box.addActionListener(this);
         
 
