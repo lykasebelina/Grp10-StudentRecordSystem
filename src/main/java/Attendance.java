@@ -23,9 +23,6 @@ import javax.swing.table.JTableHeader;
 public class Attendance extends JFrame implements ActionListener {
     
      JFrame attendanceFrame;
-     Image background;
-     Image imageSize;
-     ImageIcon bgImage;
      JPanel headerPanel;
      JLabel headerLabel;
      JTable table;
@@ -37,6 +34,11 @@ public class Attendance extends JFrame implements ActionListener {
      JButton deleteButton;
      JButton backButton;
      JTextField searchBar;
+     ImageIcon bg;
+     Image imageSize;
+     ImageIcon backgroundImage;
+     JPanel panelImage;
+     JLabel imageLabel;
      
     public Attendance() {
         attendanceFrame = new JFrame();
@@ -46,20 +48,6 @@ public class Attendance extends JFrame implements ActionListener {
         attendanceFrame.setLayout(null);
         attendanceFrame.setLocationRelativeTo(null);
   
-        try {
-            
-             background = ImageIO.read(new File("images/sbBinan.jpg"));
-             imageSize = background.getScaledInstance(1500, 1000, Image.SCALE_SMOOTH);
-             bgImage = new ImageIcon(imageSize);
-             
-             attendanceFrame.setContentPane(new JLabel(bgImage));
-             
-            } 
-        
-        catch (IOException e) {
-                                e.printStackTrace();
-                                
-                              }
         
         
         headerPanel = new JPanel();
@@ -102,11 +90,11 @@ public class Attendance extends JFrame implements ActionListener {
          searchBar = new JTextField(20);
          
          
-         JPanel panel = new JPanel(new BorderLayout());
-         panel.add(searchBar);
-         panel.setBounds(50, 120, 300, 30);
+         JPanel panelText = new JPanel(new BorderLayout());
+         panelText.add(searchBar);
+         panelText.setBounds(50, 120, 300, 30);
        
-         attendanceFrame.add(panel);
+         attendanceFrame.add(panelText);
     
         addButton = new JButton("Add New Record");
         addButton.setFont(new Font("Arial Black", Font.BOLD, 13));
@@ -135,11 +123,26 @@ public class Attendance extends JFrame implements ActionListener {
         backButton.setBounds(1180, 720, 200, 50);
         backButton.addActionListener(this);
         
+        
+        
+        bg = new ImageIcon("folderimage/sbBinan.jpg");
+        imageSize = bg.getImage().getScaledInstance(1500, 1000, Image.SCALE_SMOOTH);
+        backgroundImage = new ImageIcon(imageSize);
+       
+        imageLabel = new JLabel(backgroundImage);
+        
+        JPanel panelImage = new JPanel();
+        panelImage.setBounds(0,-10,1500,1000);
+        panelImage.add(imageLabel);
+        
+        
         attendanceFrame.add(scrollPane);
         attendanceFrame.add(headerPanel);
         attendanceFrame.add(addButton);
         attendanceFrame.add(deleteButton);
         attendanceFrame.add(backButton);
+        attendanceFrame.add(panelImage);
+        
 
         attendanceFrame.pack();
         attendanceFrame.setVisible(true);  
@@ -170,3 +173,5 @@ public class Attendance extends JFrame implements ActionListener {
             }
         }
 }
+
+
