@@ -1,9 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /*
@@ -18,12 +15,14 @@ import javax.swing.ImageIcon;
 
 public class MainMenu extends JFrame implements ActionListener {
         JFrame frame;
-        Image background;
-        Image imageSize;
-        ImageIcon bgImage;
         JPanel headerPanel;
         JLabel headerLabel;
         JButton button1, button2, button3, button4, logoutButton;
+        Image background;
+        ImageIcon bgImage;
+        ImageIcon bckgrnd;
+        JPanel panelBG;
+        JLabel imageLabel;
         
         
     public MainMenu() {
@@ -31,24 +30,9 @@ public class MainMenu extends JFrame implements ActionListener {
         frame.setTitle("Dashboard Menu");
         frame.setSize(1500, 1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
-        frame.setLocationRelativeTo(null);
+        
 
     
-        try {
-            
-             background = ImageIO.read(new File("folderimage/sbBinan.jpg"));
-             imageSize = background.getScaledInstance(1500, 1000, Image.SCALE_SMOOTH);
-             bgImage = new ImageIcon(imageSize);
-             
-             frame.setContentPane(new JLabel(bgImage));
-             
-            } 
-        
-        catch (IOException e) {
-                                e.printStackTrace();
-                                
-                              }
 
 
         headerPanel = new JPanel();
@@ -110,6 +94,18 @@ public class MainMenu extends JFrame implements ActionListener {
 
 
 
+        bgImage = new ImageIcon("folderimage/sbBinan.jpg");
+        background = bgImage.getImage().getScaledInstance(1500, 1000, Image.SCALE_SMOOTH);
+        bckgrnd = new ImageIcon(background);
+       
+        imageLabel = new JLabel(bckgrnd);
+        
+        panelBG = new JPanel();
+        panelBG.setBounds(0,-10,1500,1000);
+        panelBG.add(imageLabel);
+        
+        
+
         
 
         frame.add(headerPanel);
@@ -117,9 +113,10 @@ public class MainMenu extends JFrame implements ActionListener {
         frame.add(button2);
         frame.add(button3);
         frame.add(logoutButton);
-
+        frame.add(panelBG);
  
         
+        frame.setLocationRelativeTo(null);
         frame.pack();
         frame.setVisible(true);
     }
