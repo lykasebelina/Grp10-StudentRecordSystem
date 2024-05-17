@@ -3,6 +3,16 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+
+
+/**
+ *
+ * @author Stephanie Palma and Vanessa Ramos
+ */
+
+
+
+
 public class StudentInfoApp1 extends JFrame {
     private JTextField nameField, yearandcourseField, idField, ageField, genderField, contactnumberField, emailField;
     private JTextArea displayArea;
